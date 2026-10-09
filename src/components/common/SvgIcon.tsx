@@ -145,30 +145,6 @@ const FolderIcon = ({ size, color }: { size: number; color: string }) => (
   </Svg>
 )
 
-/**
- * 伴唱图标 - 麦克风 + 音符，用于人声/伴奏切换
- */
-const VocalMixIcon = ({ size, color }: { size: number; color: string }) => (
-  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-    {/* 麦克风头 */}
-    <Rect x="9" y="2.5" width="6" height="10" rx="3" stroke={color} strokeWidth="1.6" fill="none" />
-    {/* 麦克风支架弧线 */}
-    <Path
-      d="M5.5 11a6.5 6.5 0 0 0 13 0"
-      stroke={color}
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      fill="none"
-    />
-    {/* 麦克风杆 */}
-    <Line x1="12" y1="17.5" x2="12" y2="21" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
-    {/* 音符符头（右下角） */}
-    <Circle cx="17.5" cy="19.2" r="2" fill={color} />
-    {/* 音符符杆 */}
-    <Line x1="19.5" y1="19.2" x2="19.5" y2="13.5" stroke={color} strokeWidth="1.4" strokeLinecap="round" />
-  </Svg>
-)
-
 export const SvgIcon = memo(({ name, size = 15, rawSize, color = '#000', style }: SvgIconProps) => {
   const finalSize = rawSize ?? scaleSizeW(size)
 
@@ -192,8 +168,6 @@ export const SvgIcon = memo(({ name, size = 15, rawSize, color = '#000', style }
         return <MusicListIcon size={finalSize} color={color} />
       case 'landscape-immersion':
         return <LandscapeImmersionIcon size={finalSize} color={color} />
-      case 'vocal-mix':
-        return <VocalMixIcon size={finalSize} color={color} />
       default:
         return null
     }

@@ -4,7 +4,6 @@ import PlayModeBtn from './PlayModeBtn'
 import MusicAddBtn from './MusicAddBtn'
 import DesktopLyricBtn from './DesktopLyricBtn'
 import CommentBtn from './CommentBtn'
-import VocalMixBtn from './VocalMixBtn'
 import {memo, useRef, useCallback, useEffect} from 'react'
 import Btn from './Btn'
 import { type Position } from '@/screens/Home/Views/Mylist/MusicList/ListMenu'
@@ -124,7 +123,6 @@ export default memo(({ componentId }: { componentId: string }) => {
         <DesktopLyricBtn />
         <MusicAddBtn />
         <PlayModeBtn />
-        <VocalMixBtn />
         {isOneDrive ? null : <CommentBtn />}
         <Btn icon="dots-vertical" onPress={handleShowMenu} ref={moreBtnRef} />
       </View>

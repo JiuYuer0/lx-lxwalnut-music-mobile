@@ -7,7 +7,6 @@ import {
   setResource,
   setStop, initTrackInfo,
 } from '@/plugins/player'
-import { reapplyVocalMixIfNeeded } from '@/plugins/player/vocalMix'
 import { setStatusText } from '@/core/player/playStatus'
 import playerState from '@/store/player/state'
 import settingState from '@/store/setting/state'
@@ -339,8 +338,6 @@ export const handlePlay = async () => {
       isHandleAudioFocus: settingState.setting['player.isHandleAudioFocus'],
       isEnableAudioOffload: settingState.setting['player.isEnableAudioOffload'],
     })
-    // 播放器刚初始化（或跨进程重启）后，恢复伴唱状态
-    void reapplyVocalMixIfNeeded()
   }
 
   global.lx.playerError = false
