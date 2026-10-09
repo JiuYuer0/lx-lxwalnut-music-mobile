@@ -199,6 +199,11 @@ declare global {
       'player.isEnableAudioOffload': boolean
 
       /**
+       * 伴唱（人声消除/混合）是否启用
+       */
+      'player.vocalMixEnabled': boolean
+
+      /**
        * 是否显示歌词翻译
        */
       'player.isShowLyricTranslation': boolean
